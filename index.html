@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>Poly</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="author" content="Sebastian Sastre" />
+    <link href="bower_components/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <script type='text/javascript' src='bower_components/amber/support/requirejs/require.min.js'></script>
+    <script type='text/javascript' src='bower_components/amber/support/amber.js'></script>
+  </head>
+
+  <body>
+    <script type='text/javascript'>
+      require.config({ paths: {
+        'physicsjs': 'bower_components/PhysicsJS/dist'
+      }});
+  		require([
+        'physicsjs/physicsjs-full-0.5.3.min'
+		], function( Physics ){
+    
+		    window.Physics=Physics;
+		});
+    </script>
+
+    <script type='text/javascript'>
+      require.config({ paths: {
+          'Poly': 'src' //mapping compiled .js files and smalltalk source files
+      }});
+      require([
+          'amber/devel',
+          'Poly/Poly'
+      ], function (smalltalk) {
+          //used for all new packages in IDE
+          smalltalk.initialize({
+            'transport.defaultAmdNamespace': "Poly"
+          });
+          require('amber/helpers').Poly._doStuff();
+      });
+    </script>
+    <script type='text/javascript' src='bower_components/bootstrap/js/bootstrap.min.js'></script>
+    <button class= "btn" onclick="require('amber/helpers').globals.Browser._open()">legacy IDE</button>
+    <button class= "btn btn-primary" onclick="require('amber/helpers').popupHelios()">Helios IDE</button>
+  </body>
+
+</html>

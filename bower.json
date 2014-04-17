@@ -1,0 +1,23 @@
+{
+    "name": "Poly",
+    "description": "Amber Application.",
+    "version": "0.9.1",
+    "authors": [
+        {
+            "name": "Sebastian Sastre",
+            "email": "sebastian@flowingconcept.com"
+        }
+    ],
+    "homepage": "https://github.com/sebastian/poly",
+    "keywords": [
+        "Amber",
+        "Smalltalk"
+    ],
+    "license": [
+        "MIT"
+    ],
+    "private": false,
+    "dependencies": {
+        "amber": "~>= 0.12.4"
+    }
+}
