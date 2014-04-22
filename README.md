@@ -6,9 +6,7 @@
 
 ##Prerequisites
 
-You need to have installed [nodejs](http://www.nodejs.org/) (newer versions of *nodejs* includes the node package manager *npm*. 
-
-So you can execute:
+You need to have installed [nodejs](http://www.nodejs.org/) then Amber. Note that newer versions of *nodejs* includes the node package manager *npm*, so you can get amber with:
 
 
     # Installs Amber's command line interface (global install, needed only once)
@@ -18,7 +16,7 @@ or
 
     sudo npm install -g amber-cli
 
-Now you have the [Amber Smalltalk](http://amber-lang.net/) *command line interface* and you can start new projects like this:
+Once you have the [Amber Smalltalk](http://amber-lang.net/) *command line interface* you can start your new Amber projects with this:
 
     mkdir myapp
     cd myapp
@@ -48,7 +46,7 @@ Now you have the [Amber Smalltalk](http://amber-lang.net/) *command line interfa
 
 ##Feedback
 
-Did you learn something or have questions? Join the [Amber group](https://groups.google.com/forum/#!forum/amber-lang) or the [amber-lang IRC channel](irc://freenode.net/channel?amber-lang)
+Did you learn something or have questions? Join the [Amber group](https://groups.google.com/forum/#!forum/amber-lang) or the [amber-lang IRC channel](irc://freenode.net/channel?amber-lang) and share!
 
 Did you improve something? thank you for your [pull request](https://help.github.com/articles/using-pull-requests)!
 
