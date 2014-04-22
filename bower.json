@@ -18,6 +18,7 @@
     ],
     "private": false,
     "dependencies": {
+        "PhysicsJS": "*",
         "amber": "~>= 0.12.4"
     }
 }
