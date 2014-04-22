@@ -55,7 +55,24 @@ Some commands to have fun with:
  - addMotion
  - addGravity!
 
-!PolyWidget methodsFor: 'not yet classified'!
+!PolyWidget methodsFor: 'accessing'!
+
+counters
+
+	^ counters ifNil:[counters := Array new]
+!
+
+gravity: anAcceleration
+
+	gravity setAcceleration: anAcceleration
+!
+
+stuff
+
+	^ stuff ifNil:[stuff := Array new]
+! !
+
+!PolyWidget methodsFor: 'control'!
 
 addCounter
 
@@ -75,32 +92,6 @@ addMotion
 	(HTMLCanvas onJQuery: log asJQuery) p: 'Things are moving!! Watch out!!...'
 !
 
-addRenderer
-	<window.Physics(function(w){
-	physics=window.Physics;
-	var r=window.Physics.renderer('canvas',{
-			el: 'viewport',
-			width: 500,
-			height: 500
-			});
-	renderer=r;
-	world=w;
-	world.add(renderer)});
-
-	world.add( Physics.behavior('body-impulse-response') );
-	world.add( Physics.behavior('body-collision-detection') );
-	world.add( Physics.behavior('sweep-prune') );  
-
-	var bounds=Physics.aabb(0, 0, 500, 500);
-    world.add( Physics.behavior('edge-collision-detection', {
-   		aabb: bounds,
-    	restitution: 0.2
-	}) );
-
-
-	return world>
-!
-
 addStuff
 
 	[self createThing.
@@ -109,18 +100,6 @@ addStuff
 	world render.
 	
 	(HTMLCanvas onJQuery: log asJQuery) p: 'A thing was added...'
-!
-
-addStuffOld
-
-	self addThing: self firstThing.
-	self addThing: self secondThing.
-	self addThing: self thirdThing.
-	world add: self stuff first.
-	world add: self stuff second.
-	world add: self stuff third.
-	
-	world render
 !
 
 addThing: aThing
@@ -144,82 +123,9 @@ basicAddMotion
     
     world.subscribe('step', function(){
     	world.render();});>
-!
+! !
 
-counters
-
-	^ counters ifNil:[counters := Array new]
-!
-
-createThing
-	
-	| newThing |
-
-	newThing := self createThingIn: self randomPoint 
-		vx: self randomSpeed
-		from: 0 
-		to: 200.
-		
-	self stuff addFirst: newThing
-!
-
-createThingIn: aPoint vx: aSpeed from: minimum to: maximum
-	<return physics.body('convex-polygon', {
-    x: 250,
-    y: 250,
-    vx: 0.01,
-    vertices: [
-        {x: 0, y: Math.floor(Math.random() * (maximum - minimum + 1)) + minimum},
-        {x: Math.floor(Math.random() * (maximum - minimum + 1)) + minimum, y: Math.floor(Math.random() * (maximum - minimum + 1)) + minimum},
-        {x: Math.floor(Math.random() * (maximum - minimum + 1)) + minimum, y: 0},
-        {x: 0, y: 0}
-    ]
-});>
-!
-
-createWorld
-	| html |
-	html := self newCanvas.
-
-	worldWrapper := html div
-		class: 'row';
-		with:[
-			html div
-				class: 'span6';
-				with:[
-					self renderCanvasOn: html.
-					world := self addRenderer].
-
-			html div
-				class: 'span3';
-				with: [log := html div id: 'log']].
-				
-	(HTMLCanvas onJQuery: log asJQuery) p: 'World created...'
-!
-
-firstThing
-	<return physics.body('convex-polygon', {
-    x: 250,
-    y: 250,
-    vx: 0.01,
-    vertices: [
-        {x: 0, y: 50},
-        {x: 50, y: 50},
-        {x: 50, y: 0},
-        {x: 0, y: 0}
-    ]
-});>
-!
-
-gravity: anAcceleration
-
-	gravity setAcceleration: anAcceleration
-!
-
-newCanvas
-
-	^ HTMLCanvas onJQuery: 'body' asJQuery
-!
+!PolyWidget methodsFor: 'random'!
 
 randomFrom: min to: max
 	<return Math.floor(Math.random() * (max - min + 1)) + min>
@@ -231,7 +137,9 @@ randomPoint
 
 randomSpeed 
 	^ (self randomFrom: 5 to: 70) / 1000
-!
+! !
+
+!PolyWidget methodsFor: 'rendering'!
 
 renderButtonsOn: html
 
@@ -283,6 +191,97 @@ renderOn: html
 
 	self renderButtonsOn: html.
 	self createWorld.
+! !
+
+!PolyWidget methodsFor: 'setup'!
+
+addRenderer
+	<window.Physics(function(w){
+	physics=window.Physics;
+	var r=window.Physics.renderer('canvas',{
+			el: 'viewport',
+			width: 500,
+			height: 500
+			});
+	renderer=r;
+	world=w;
+	world.add(renderer)});
+
+	world.add( Physics.behavior('body-impulse-response') );
+	world.add( Physics.behavior('body-collision-detection') );
+	world.add( Physics.behavior('sweep-prune') );  
+
+	var bounds=Physics.aabb(0, 0, 500, 500);
+    world.add( Physics.behavior('edge-collision-detection', {
+   		aabb: bounds,
+    	restitution: 0.2
+	}) );
+
+
+	return world>
+!
+
+addStuffOld
+
+	self addThing: self firstThing.
+	self addThing: self secondThing.
+	self addThing: self thirdThing.
+	world add: self stuff first.
+	world add: self stuff second.
+	world add: self stuff third.
+	
+	world render
+!
+
+createThing
+	
+	| newThing |
+
+	newThing := self createThingIn: self randomPoint 
+		vx: self randomSpeed
+		from: 0 
+		to: 200.
+		
+	self stuff addFirst: newThing
+!
+
+createThingIn: aPoint vx: aSpeed from: minimum to: maximum
+	<return physics.body('convex-polygon', {
+    x: 250,
+    y: 250,
+    vx: 0.01,
+    vertices: [
+        {x: 0, y: Math.floor(Math.random() * (maximum - minimum + 1)) + minimum},
+        {x: Math.floor(Math.random() * (maximum - minimum + 1)) + minimum, y: Math.floor(Math.random() * (maximum - minimum + 1)) + minimum},
+        {x: Math.floor(Math.random() * (maximum - minimum + 1)) + minimum, y: 0},
+        {x: 0, y: 0}
+    ]
+});>
+!
+
+createWorld
+	| html |
+	html := self newCanvas.
+
+	worldWrapper := html div
+		class: 'row';
+		with:[
+			html div
+				class: 'span6';
+				with:[
+					self renderCanvasOn: html.
+					world := self addRenderer].
+
+			html div
+				class: 'span3';
+				with: [log := html div id: 'log']].
+				
+	(HTMLCanvas onJQuery: log asJQuery) p: 'World created...'
+!
+
+newCanvas
+
+	^ HTMLCanvas onJQuery: 'body' asJQuery
 !
 
 reset
@@ -290,6 +289,22 @@ reset
 	canvas asJQuery remove.
 	worldWrapper asJQuery empty.
 	self createWorld
+! !
+
+!PolyWidget methodsFor: 'things'!
+
+firstThing
+	<return physics.body('convex-polygon', {
+    x: 250,
+    y: 250,
+    vx: 0.01,
+    vertices: [
+        {x: 0, y: 50},
+        {x: 50, y: 50},
+        {x: 50, y: 0},
+        {x: 0, y: 0}
+    ]
+});>
 !
 
 secondThing
@@ -304,11 +319,6 @@ secondThing
         {x: 0, y: 0}
     ]
 });>
-!
-
-stuff
-
-	^ stuff ifNil:[stuff := Array new]
 !
 
 thirdThing
