@@ -111,7 +111,7 @@ globals.PolyWidget.comment="##PolyWidget is the Presenter for of the PhysicsJS c
 smalltalk.addMethod(
 smalltalk.method({
 selector: "addCounter",
-protocol: 'not yet classified',
+protocol: 'control',
 fn: function () {
 var self=this;
 function $Counter(){return globals.Counter||(typeof Counter=="undefined"?nil:Counter)}
@@ -128,7 +128,7 @@ globals.PolyWidget);
 smalltalk.addMethod(
 smalltalk.method({
 selector: "addGravity",
-protocol: 'not yet classified',
+protocol: 'control',
 fn: function () {
 var self=this;
 function $HTMLCanvas(){return globals.HTMLCanvas||(typeof HTMLCanvas=="undefined"?nil:HTMLCanvas)}
@@ -146,7 +146,7 @@ globals.PolyWidget);
 smalltalk.addMethod(
 smalltalk.method({
 selector: "addMotion",
-protocol: 'not yet classified',
+protocol: 'control',
 fn: function () {
 var self=this;
 function $HTMLCanvas(){return globals.HTMLCanvas||(typeof HTMLCanvas=="undefined"?nil:HTMLCanvas)}
@@ -164,7 +164,7 @@ globals.PolyWidget);
 smalltalk.addMethod(
 smalltalk.method({
 selector: "addRenderer",
-protocol: 'not yet classified',
+protocol: 'setup',
 fn: function () {
 var self=this;
 return smalltalk.withContext(function($ctx1) { 
@@ -202,7 +202,7 @@ globals.PolyWidget);
 smalltalk.addMethod(
 smalltalk.method({
 selector: "addStuff",
-protocol: 'not yet classified',
+protocol: 'control',
 fn: function () {
 var self=this;
 function $HTMLCanvas(){return globals.HTMLCanvas||(typeof HTMLCanvas=="undefined"?nil:HTMLCanvas)}
@@ -226,7 +226,7 @@ globals.PolyWidget);
 smalltalk.addMethod(
 smalltalk.method({
 selector: "addStuffOld",
-protocol: 'not yet classified',
+protocol: 'setup',
 fn: function () {
 var self=this;
 return smalltalk.withContext(function($ctx1) { 
@@ -261,7 +261,7 @@ globals.PolyWidget);
 smalltalk.addMethod(
 smalltalk.method({
 selector: "addThing:",
-protocol: 'not yet classified',
+protocol: 'control',
 fn: function (aThing) {
 var self=this;
 return smalltalk.withContext(function($ctx1) { 
@@ -277,7 +277,7 @@ globals.PolyWidget);
 smalltalk.addMethod(
 smalltalk.method({
 selector: "basicAddGravity",
-protocol: 'not yet classified',
+protocol: 'control',
 fn: function () {
 var self=this;
 return smalltalk.withContext(function($ctx1) { 
@@ -297,7 +297,7 @@ globals.PolyWidget);
 smalltalk.addMethod(
 smalltalk.method({
 selector: "basicAddMotion",
-protocol: 'not yet classified',
+protocol: 'control',
 fn: function () {
 var self=this;
 return smalltalk.withContext(function($ctx1) { 
@@ -319,7 +319,7 @@ globals.PolyWidget);
 smalltalk.addMethod(
 smalltalk.method({
 selector: "counters",
-protocol: 'not yet classified',
+protocol: 'accessing',
 fn: function () {
 var self=this;
 function $Array(){return globals.Array||(typeof Array=="undefined"?nil:Array)}
@@ -344,7 +344,7 @@ globals.PolyWidget);
 smalltalk.addMethod(
 smalltalk.method({
 selector: "createThing",
-protocol: 'not yet classified',
+protocol: 'setup',
 fn: function () {
 var self=this;
 var newThing;
@@ -362,7 +362,7 @@ globals.PolyWidget);
 smalltalk.addMethod(
 smalltalk.method({
 selector: "createThingIn:vx:from:to:",
-protocol: 'not yet classified',
+protocol: 'setup',
 fn: function (aPoint, aSpeed, minimum, maximum) {
 var self=this;
 return smalltalk.withContext(function($ctx1) { 
@@ -388,7 +388,7 @@ globals.PolyWidget);
 smalltalk.addMethod(
 smalltalk.method({
 selector: "createWorld",
-protocol: 'not yet classified',
+protocol: 'setup',
 fn: function () {
 var self=this;
 var html;
@@ -438,7 +438,7 @@ globals.PolyWidget);
 smalltalk.addMethod(
 smalltalk.method({
 selector: "firstThing",
-protocol: 'not yet classified',
+protocol: 'things',
 fn: function () {
 var self=this;
 return smalltalk.withContext(function($ctx1) { 
@@ -464,7 +464,7 @@ globals.PolyWidget);
 smalltalk.addMethod(
 smalltalk.method({
 selector: "gravity:",
-protocol: 'not yet classified',
+protocol: 'accessing',
 fn: function (anAcceleration) {
 var self=this;
 return smalltalk.withContext(function($ctx1) { 
@@ -480,7 +480,7 @@ globals.PolyWidget);
 smalltalk.addMethod(
 smalltalk.method({
 selector: "newCanvas",
-protocol: 'not yet classified',
+protocol: 'setup',
 fn: function () {
 var self=this;
 function $HTMLCanvas(){return globals.HTMLCanvas||(typeof HTMLCanvas=="undefined"?nil:HTMLCanvas)}
@@ -499,7 +499,7 @@ globals.PolyWidget);
 smalltalk.addMethod(
 smalltalk.method({
 selector: "randomFrom:to:",
-protocol: 'not yet classified',
+protocol: 'random',
 fn: function (min, max) {
 var self=this;
 return smalltalk.withContext(function($ctx1) { 
@@ -515,7 +515,7 @@ globals.PolyWidget);
 smalltalk.addMethod(
 smalltalk.method({
 selector: "randomPoint",
-protocol: 'not yet classified',
+protocol: 'random',
 fn: function () {
 var self=this;
 return smalltalk.withContext(function($ctx1) { 
@@ -535,7 +535,7 @@ globals.PolyWidget);
 smalltalk.addMethod(
 smalltalk.method({
 selector: "randomSpeed",
-protocol: 'not yet classified',
+protocol: 'random',
 fn: function () {
 var self=this;
 return smalltalk.withContext(function($ctx1) { 
@@ -553,7 +553,7 @@ globals.PolyWidget);
 smalltalk.addMethod(
 smalltalk.method({
 selector: "renderButtonsOn:",
-protocol: 'not yet classified',
+protocol: 'rendering',
 fn: function (html) {
 var self=this;
 return smalltalk.withContext(function($ctx1) { 
@@ -641,7 +641,7 @@ globals.PolyWidget);
 smalltalk.addMethod(
 smalltalk.method({
 selector: "renderCanvasOn:",
-protocol: 'not yet classified',
+protocol: 'rendering',
 fn: function (html) {
 var self=this;
 return smalltalk.withContext(function($ctx1) { 
@@ -664,7 +664,7 @@ globals.PolyWidget);
 smalltalk.addMethod(
 smalltalk.method({
 selector: "renderOn:",
-protocol: 'not yet classified',
+protocol: 'rendering',
 fn: function (html) {
 var self=this;
 return smalltalk.withContext(function($ctx1) { 
@@ -681,7 +681,7 @@ globals.PolyWidget);
 smalltalk.addMethod(
 smalltalk.method({
 selector: "reset",
-protocol: 'not yet classified',
+protocol: 'setup',
 fn: function () {
 var self=this;
 return smalltalk.withContext(function($ctx1) { 
@@ -702,7 +702,7 @@ globals.PolyWidget);
 smalltalk.addMethod(
 smalltalk.method({
 selector: "secondThing",
-protocol: 'not yet classified',
+protocol: 'things',
 fn: function () {
 var self=this;
 return smalltalk.withContext(function($ctx1) { 
@@ -728,7 +728,7 @@ globals.PolyWidget);
 smalltalk.addMethod(
 smalltalk.method({
 selector: "stuff",
-protocol: 'not yet classified',
+protocol: 'accessing',
 fn: function () {
 var self=this;
 function $Array(){return globals.Array||(typeof Array=="undefined"?nil:Array)}
@@ -753,7 +753,7 @@ globals.PolyWidget);
 smalltalk.addMethod(
 smalltalk.method({
 selector: "thirdThing",
-protocol: 'not yet classified',
+protocol: 'things',
 fn: function () {
 var self=this;
 return smalltalk.withContext(function($ctx1) { 
