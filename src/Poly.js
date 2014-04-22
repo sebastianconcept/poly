@@ -3,10 +3,11 @@ smalltalk.addPackage('Poly');
 smalltalk.packages["Poly"].transport = {"type":"amd","amdNamespace":"Poly"};
 
 smalltalk.addClass('Poly', globals.Object, ['widget'], 'Poly');
+globals.Poly.comment="Application class. sets up the demo.";
 smalltalk.addMethod(
 smalltalk.method({
 selector: "gravity:",
-protocol: 'as yet unclassified',
+protocol: 'accessing',
 fn: function (anAccelerationValue) {
 var self=this;
 return smalltalk.withContext(function($ctx1) { 
@@ -54,7 +55,7 @@ globals.Poly);
 smalltalk.addMethod(
 smalltalk.method({
 selector: "onOpen",
-protocol: 'not yet classified',
+protocol: 'setup',
 fn: function () {
 var self=this;
 function $PolyWidget(){return globals.PolyWidget||(typeof PolyWidget=="undefined"?nil:PolyWidget)}
@@ -73,7 +74,7 @@ globals.Poly);
 smalltalk.addMethod(
 smalltalk.method({
 selector: "widget",
-protocol: 'as yet unclassified',
+protocol: 'accessing',
 fn: function () {
 var self=this;
 var $1;
@@ -90,15 +91,15 @@ globals.Poly);
 
 smalltalk.addMethod(
 smalltalk.method({
-selector: "doStuff",
+selector: "main",
 protocol: 'not yet classified',
-fn: function () {
+fn: function (){
 var self=this;
 return smalltalk.withContext(function($ctx1) { 
 _st(window)._at_put_("app",_st(self._new())._onOpen());
-return self}, function($ctx1) {$ctx1.fill(self,"doStuff",{},globals.Poly.klass)});},
+return self}, function($ctx1) {$ctx1.fill(self,"main",{},globals.Poly.klass)})},
 args: [],
-source: "doStuff\x0a\x0a\x09window at: #app put: self new onOpen",
+source: "main\x0a\x0a\x09window at: #app put: self new onOpen",
 messageSends: ["at:put:", "onOpen", "new"],
 referencedClasses: []
 }),

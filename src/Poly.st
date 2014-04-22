@@ -2,13 +2,21 @@ Smalltalk createPackage: 'Poly'!
 Object subclass: #Poly
 	instanceVariableNames: 'widget'
 	package: 'Poly'!
+!Poly commentStamp!
+Application class. sets up the demo.!
 
-!Poly methodsFor: 'as yet unclassified'!
+!Poly methodsFor: 'accessing'!
 
 gravity: anAccelerationValue
 
 	widget gravity: anAccelerationValue
 !
+
+widget
+	^ widget
+! !
+
+!Poly methodsFor: 'as yet unclassified'!
 
 invertedGravity
 
@@ -18,13 +26,9 @@ invertedGravity
 normalGravity
 
 	window app widget gravity: #{'x'->0.'y'-> 0.0004}
-!
-
-widget
-	^ widget
 ! !
 
-!Poly methodsFor: 'not yet classified'!
+!Poly methodsFor: 'setup'!
 
 onOpen
 
@@ -35,7 +39,7 @@ onOpen
 
 !Poly class methodsFor: 'not yet classified'!
 
-doStuff
+main
 
 	window at: #app put: self new onOpen
 ! !
