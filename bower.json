@@ -19,6 +19,6 @@
     "private": false,
     "dependencies": {
         "PhysicsJS": "0.5.3-alpha",
-        "amber": "~>= 0.12.4"
+        "amber": "^0.12.4"
     }
 }
